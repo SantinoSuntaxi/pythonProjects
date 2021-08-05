@@ -1,6 +1,6 @@
-# read data with line break
+# read data.txt with line break
 # dataUser = []
-# with open('user') as g:
+# with open('user.txt') as g:
 #     for lineUser in g:
 #         dataUser.append(lineUser)
 #
@@ -13,37 +13,37 @@ def readFile(fileName):
     words = fileObj.read().splitlines()  # puts the file into an array
     fileObj.close()
     return words
-dataUser = readFile('user')
+dataUser = readFile('user.txt')
 dataUserNotFound = dataUser
 
 print(dataUser)
 # dataUserLength = len(dataUser)
 # print(dataUserLength)
 
-with open('data') as f:
+with open('data.txt') as f:
     for line in f:
         nineChars = line[0:9]
         if nineChars in dataUserNotFound:
             dataUserNotFound.remove(nineChars)
             dataResult.append(line)
-        # else:
-        #     print("")
+        else:
+            print("")
 
 print(dataResult)
 print(dataUserNotFound)
        #print(nineChars)
 
-# f = open("result", "w")
+# f = open("result.txt", "w")
 # f.write("dataResult")
 # f.close()
 
-outF = open("result", "w")
+outF = open("result.txt", "w")
 for line in dataResult:
   # write line to output file
   outF.write(line)
 outF.close()
 
-outF = open("result", "a")
+outF = open("result.txt", "a")
 for line in dataUserNotFound:
   # write line to output file
   outF.write(line)
